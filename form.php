@@ -12,7 +12,7 @@ $result = mysqli_query($conn, $sql);
   <div class="container">
 
     <h1>Impressão de certificado</h1>
-    <p class="lead">Preencha o formulário a baixo com seus dados e o evento referente.</p>
+    <p class="lead">Informe no formulário abaixo com seu e-mail e o evento referente.</p>
     
     <form name="emitCert" action="emitcert.php" method="post">
         <div class="row mb-3">

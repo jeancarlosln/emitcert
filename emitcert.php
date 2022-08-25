@@ -30,10 +30,9 @@ function Header()
        // Output name
        while($row = $result->fetch_assoc()) {
            $nome = $row["nome"];
-       }
+       } 
      }
     
-
 
     // background
     if ($id == 1){

@@ -1,7 +1,3 @@
-node_modules/
-vendor/
-package-lock.json
-composer.phar
-db.php
-learn/
-img/
+learn/*
+vendor/*
+composer.json
