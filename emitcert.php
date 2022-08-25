@@ -4,6 +4,8 @@
  */
 require 'vendor/autoload.php';
 
+// echo $_POST['myId']; exit();
+ 
 
 use Fpdf\Fpdf;
 
@@ -12,10 +14,17 @@ class PDF extends FPDF
 // Page header
 function Header()
 {   
-    
+   //Form email validation
+   if ($_POST['email'] > 0){
+    $email = $_POST['email'];
+   } else {
+    $email = "aderson_filho@uol.com.br";
+   }
+
    //Connect db
    include 'db.php';
-   $sql = "SELECT * FROM `tb_certificados` WHERE `email` LIKE 'aderitogcruz@gmail.com' AND `id_evento` LIKE '1'";
+   $id = $_POST['myId'];
+   $sql = "SELECT * FROM `tb_certificados` WHERE `email` LIKE '$email' AND `id_evento` LIKE '$id'";
    $result = $conn->query($sql);
    
    if ($result->num_rows > 0) {
@@ -26,7 +35,9 @@ function Header()
      }
 
     // background
-    if (11 == 11){
+    if ($id == 12){
+		$this->Image('img/id11.jpg',0,0,298);
+	} elseif ($id == 12){
 		$this->Image('img/id11.jpg',0,0,298);
 	}
 
