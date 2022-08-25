@@ -13,35 +13,55 @@ class PDF extends FPDF
 {
 // Page header
 function Header()
-{   
-   //Form email validation
-   if ($_POST['email'] > 0){
-    $email = $_POST['email'];
-   } else {
-    $email = "aderson_filho@uol.com.br";
-   }
+{ 
 
    //Connect db
    include 'db.php';
+   
+   //Set vars for searching
+   $email = $_POST['email'];
    $id = $_POST['myId'];
-   $sql = "SELECT * FROM `tb_certificados` WHERE `email` LIKE '$email' AND `id_evento` LIKE '$id'";
-   $result = $conn->query($sql);
+
+   //Result of searching
+   $sql = "SELECT `nome`, `email`, `id_evento` FROM `tb_certificados` WHERE `email` LIKE '$email' AND `id_evento` LIKE '$id'";
+   $result = $conn->query($sql);  
    
    if ($result->num_rows > 0) {
-       // output data of each row
+       // Output name
        while($row = $result->fetch_assoc()) {
            $nome = $row["nome"];
        }
      }
+    
+
 
     // background
-    if ($id == 12){
-		$this->Image('img/id11.jpg',0,0,298);
-	} elseif ($id == 12){
-		$this->Image('img/id11.jpg',0,0,298);
+    if ($id == 1){
+		$this->Image('img/background.jpg',0,0,298);
+	} elseif ($id == 2){
+		$this->Image('img/Certificado_Webinar_Espondiloartrites_SRB.jpg',0,0,298);		
+	} elseif ($id == 3){
+		$this->Image('img/Certificado_Webinar_impactodadornaqualidadedevidadopaciente.jpg',0,0,298);	
+	} elseif ($id == 4){
+		$this->Image('img/CertificadoWebinar_ArtritePsoriﾃ｡sica.jpg',0,0,298);	
+	} elseif ($id == 5){
+		$this->Image('img/Certificado_MonitoramentoSanguineo.jpg',0,0,298);	
+	} elseif ($id == 6){
+		$this->Image('img/Certificado_Webinar_Setembro_SRB.jpg',0,0,298);	
+	} elseif ($id == 7){
+		$this->Image('img/Certificado Webinar Novembro_SRB.jpg',0,0,298);	
+	} elseif ($id == 8){
+		$this->Image('img/Certificado Webinar reumatologista e midias_entesopatias tendinopatias_SRB.jpg',0,0,298);	
+	} elseif ($id == 9){
+		$this->Image('img/id9',0,0,298);	
+	}  elseif ($id == 10){
+		$this->Image('img/2022-dieta-antinflamatoria-e-highlights-summit.jpg',0,0,298);	
+	}  elseif ($id == 11){
+		$this->Image('img/id11.jpg',0,0,298);	
+	}   elseif ($id == 12){
+		$this->Image('img/id12.jpg',0,0,298);	
 	}
 
-    
     // Arial bold 15
     $this->SetFont('Arial','B',15);
     // Move to the right
