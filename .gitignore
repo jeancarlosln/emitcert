@@ -3,4 +3,5 @@ vendor/*
 composer.json
 db.php
 emitcert.php
-img/*
+img/
+.vscode/

@@ -66,7 +66,11 @@ function Header()
 		$this->Image('img/id11.jpg',0,0,298);	
 	}   elseif ($id == 12){
 		$this->Image('img/id12.jpg',0,0,298);	
-	}
+	}   elseif ($id == 13){
+		$this->Image('img/id13.jpg',0,0,298);	
+	}   elseif ($id == 14){
+		$this->Image('img/id14.jpg',0,0,298);	
+	}       
 
     // Arial bold 15
     $this->SetFont('Arial','B',15);
