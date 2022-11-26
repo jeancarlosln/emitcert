@@ -1,7 +1,14 @@
 <?php
+
 /**
- * Plugin Name: e-mitcert
- */
+* Plugin Name: E-mitcert
+* Plugin URI: https://www.uios.com.br
+* Description: Emissor de certifciado para wordpress
+* Version: beta
+* Author: Jean C. Lima
+* Author URI: https://www.uios.com.br/jeanclima
+**/
+
 require 'vendor/autoload.php';
 
 // echo $_POST['myId']; exit();

@@ -2,3 +2,5 @@ learn/*
 vendor/*
 composer.json
 db.php
+emitcert.php
+img/*
